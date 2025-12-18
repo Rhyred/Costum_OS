@@ -1,115 +1,128 @@
-Pegal Linux V2 (Garuda Rani Edition)
+# 🦅 Pegal Linux V2
 
-Sistem operasi kustom berbasis Arch Linux — dirancang khusus untuk produktivitas Engineering & IoT. Ringan, estetis, dan siap pakai.
+## 🚀 Jalankan Secara Lokal
 
-✨ Fitur Utama
+## 📖 Tentang Proyek
 
-🛠️ Engineering Ready: Dilengkapi pre-installed tools: VS Code, Arduino IDE, Wireshark, Git, dll.
+**Pegal Linux V2** adalah distribusi Linux hasil kustomisasi dari **Garuda Linux (Arch)** yang dirancang khusus untuk kebutuhan **Engineering** dan  **Internet of Things (IoT)** .
 
-🎨 Visual Identity: Boot Splash kustom (Plymouth Aregression V2), GRUB Theme, dan Desktop Sweet-Dark.
+Proyek ini bertujuan untuk menyediakan lingkungan kerja yang siap pakai ( *out-of-the-box* ) dengan antarmuka yang modern, performa tinggi berkat kernel  **Linux Zen** , dan keamanan data terjamin melalui sistem snapshot  **BTRFS** .
 
-⚡ Performa Tinggi: Menggunakan Kernel Linux Zen untuk responsivitas maksimal.
+## ✨ Fitur Utama
 
-🛡️ Keamanan Data: Sistem Snapshot BTRFS terintegrasi untuk pemulihan instan dari menu boot.
+### 🛠️ Engineering Ready
 
-📟 Terminal Kustom: Integrasi Fastfetch dengan logo ASCII art khusus & MOTD statis.
+Dilengkapi dengan *pre-installed tools* untuk produktivitas coding dan hardware:
 
-🚀 Instalasi & Penggunaan
+* **Development:** Visual Studio Code, Arduino IDE, Git.
+* **Networking:** Wireshark, Nmap, PuTTY, Net-tools.
+* **Multimedia:** OBS Studio, VLC Media Player, GIMP.
 
-Sebelum mulai: pastikan Anda memiliki USB Flashdrive (min. 8GB) dan software flash (Rufus/Balena Etcher).
+### 🎨 Visual Identity (Branding)
 
-Persiapan
+* **Boot Splash:** Tema Plymouth kustom **"Aregression V2"** yang elegan.
+* **Bootloader:** GRUB Menu dengan *background* kustom dan manajemen *entry* yang rapi.
+* **Desktop:** KDE Plasma dengan tema **Sweet-Dark** (Neon/Cyberpunk) + Icon BeautyLine.
+* **Terminal:** Integrasi **Fastfetch** dengan Logo ASCII Art Kustom & MOTD Statis.
 
-Unduh file ISO terbaru dari tab Releases.
+### 🛡️ Keamanan & Stabilitas
 
-Flash ke USB drive menggunakan Rufus/Etcher.
+* **Snapshot BTRFS:** Fitur *Time Travel* yang memungkinkan pemulihan sistem instan dari menu GRUB jika terjadi kerusakan ( *Kernel Panic* ).
+* **Kernel Zen:** Dioptimalkan untuk responsivitas desktop dan gaming/multimedia.
 
-Boot PC melalui USB (mode UEFI direkomendasikan).
+## 🚀 Instalasi & Penggunaan
 
-Pasca Instalasi (Opsional — untuk paket tambahan)
+### Prasyarat
 
-Clone repositori ini:
+* USB Flashdrive (Min. 8GB).
+* Software Flash (Rufus/Balena Etcher).
+* Sistem dengan dukungan UEFI (Direkomendasikan).
 
-git clone [https://github.com/Rhyred/Pegal-Linux-V2.git](https://github.com/Rhyred/Pegal-Linux-V2.git)
-cd Pegal-Linux-V2
+## 🚀 Instalasi & Penggunaan
 
+### Prasyarat
 
-Jalankan script installer otomatis:
+* USB Flashdrive (Min. 8GB).
+* Software Flash (Rufus/Balena Etcher).
+* Sistem dengan dukungan UEFI (Direkomendasikan).
 
-chmod +x install-apps.sh
-./install-apps.sh
+### Cara Install Aplikasi Tambahan
 
+Gunakan script otomatis yang telah kami sediakan untuk menginstal paket-paket esensial pasca-instalasi.
 
-Script akan otomatis menginstal paket-paket engineering tambahan via paru / pacman.
+1. **Clone Repository ini:**
+   ```
+   git clone [https://github.com/Rhyred/Pegal-Linux-V2.git](https://github.com/Rhyred/Pegal-Linux-V2.git)
+   cd Pegal-Linux-V2
+   ```
+2. **Jalankan Script Installer:**
+   ```
+   chmod +x install-apps.sh
+   ./install-apps.sh
+   ```
+3. **Manual Install (via Paru):**
+   ```
+   paru -S <nama_paket>
+   # Contoh: paru -S visual-studio-code-bin
+   ```
 
-📁 Struktur Repositori (singkat)
+### Cara Mengganti Tema Boot (Plymouth)
 
-pegal-linux-v2/
-├── assets/             # Aset gambar (Logo, Wallpaper, Icon)
-├── scripts/            # Script otomatisasi (install-apps.sh)
-├── configs/            # File konfigurasi sistem (GRUB, Plymouth, Fastfetch)
-├── packages.list       # Daftar paket aplikasi pre-installed
-├── Manual_OS.pdf       # Panduan pengguna lengkap
-└── README.md           # Dokumentasi ini
+Jika ingin mengubah tema boot splash, gunakan perintah berikut (Wajib Rebuild Dracut):
 
-
-🎯 Cara Kerjanya (ringkas)
-
-Booting: Sistem memuat kernel Zen dengan tema Plymouth kustom via Dracut.
-
-Login: Masuk melalui SDDM dengan tema yang selaras.
-
-Desktop: Lingkungan KDE Plasma yang sudah dikonfigurasi untuk workflow engineering.
-
-Recovery: Jika terjadi error, gunakan menu "Garuda Linux Snapshots" di GRUB untuk rollback.
-
-🔧 Konfigurasi Kustom
-
-Tambahkan/Edit file konfigurasi berikut jika perlu:
-
-Terminal (Fastfetch)
-
-Lokasi: ~/.config/fastfetch/config.jsonc
-
-// Contoh mengganti warna logo
-"logo": {
-    "source": "~/.config/fastfetch/logo.txt",
-    "color": { "1": "cyan", "2": "white" }
-}
-
-
-Boot Splash (Plymouth)
-
-Lokasi Tema: /usr/share/plymouth/themes/aregression_v2/
-
-Untuk menerapkan perubahan tema:
-
+```
 sudo plymouth-set-default-theme <nama_tema>
 sudo dracut -f --regenerate-all --force
+```
 
+## 📸 Tangkapan Layar
 
-📊 Spesifikasi Minimum
+| **Boot Splash**   | **Desktop Environment** |
+| ----------------------- | ----------------------------- |
+|                         |                               |
+| *Tema Aregression V2* | *KDE Plasma Sweet-Dark*     |
 
-Processor: 64-bit Dual Core
+| **Terminal (Fastfetch)** | **GRUB Menu**   |
+| ------------------------------ | --------------------- |
+|                                |                       |
+| *Custom ASCII Art*           | *Custom Background* |
 
-RAM: 4 GB (8 GB direkomendasikan)
+> *Catatan: Ganti placeholder di atas dengan link gambar asli dari screenshot Anda.*
 
-Storage: 30 GB ruang kosong
+## 📂 Struktur Repositori
 
-GPU: Mendukung OpenGL 3.3+
+```
+.
+├── 📂 assets/              # Aset gambar (Logo, Wallpaper, Icon)
+├── 📂 scripts/             # Script instalasi & konfigurasi otomatis
+│   └── install-apps.sh     # Script installer aplikasi
+├── 📂 configs/             # File konfigurasi sistem (Backup)
+│   ├── grub                # Config /etc/default/grub
+│   ├── plymouth            # Config tema plymouth
+│   └── fastfetch           # Config jsonc & logo ascii
+├── packages.list           # Daftar paket aplikasi
+├── Manual_OS.pdf           # Panduan Pengguna Lengkap
+└── README.md               # Dokumentasi Proyek
+```
 
-👥 Tim Pengembang
+## 👥 Kredit & Tim Pengembang
 
-Tim Pegal Linux — Mahasiswa Informatika ITENAS:
+Proyek ini dikembangkan sebagai tugas besar mata kuliah  **Sistem Operasi - ITENAS Bandung** .
 
-[Nama Kamu/Rhyred] — Lead Developer & System Architect
+**Tim Pengembang:**
 
-[Nama Anggota 2] — UI/UX Designer
+* **Robi Rizki Permana**- *Lead Developer & System Architect*
+* **Aditya Luthfi** - *UI/UX Designer*
+* **Akbar Dhika A** - *Documentation & Testing*
+* **Buga Nesha A** - *Research & Asset Manager*
+* **Dila Amelisa S** - Donatur 
 
-[Nama Anggota 3] — Documentation
+**Special Thanks to:**
 
-[Nama Anggota 4] — Testing & QA
+* [Garuda Linux Team](https://garudalinux.org/ "null") - Untuk basis OS yang luar biasa.
+* [Arch Linux Community](https://archlinux.org/ "null") - Untuk dokumentasi Wiki yang lengkap.
+* **Dosen Pengampu:** Diash Firdaus S.Kom M.T
 
-[Nama Anggota 5] — Asset Manager
+---
 
-Made with ❤️ and ☕ by Rhyred using Arch Linux
+Made with ❤️ oleh Tim Error 404
