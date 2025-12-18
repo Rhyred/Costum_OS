@@ -268,4 +268,24 @@ footer i {
 }
 
 
+/* posisi awal – transparan & turun ke bawah */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* posisi akhir – muncul normal */
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,.5);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* biar iconnya jadi putih */
+}
 
