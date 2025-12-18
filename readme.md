@@ -125,4 +125,4 @@ Proyek ini dikembangkan sebagai tugas besar mata kuliah  **Sistem Operasi - ITEN
 
 ---
 
-Made with ❤️ oleh Tim Error 404
+Made with ❤️ and ☕ by Mas Agan using Arch Linux
